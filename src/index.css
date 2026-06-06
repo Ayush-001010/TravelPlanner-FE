@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=Uncial+Antiqua&display=swap');
+
+/* Font utility classes */
+.font-lobster {
+	font-family: 'Lobster Two', cursive;
+}
+
+.font-uncial {
+	font-family: 'Uncial Antiqua', serif;
+}
+
+.font-lora {
+	font-family: 'Lora', serif;
+}
