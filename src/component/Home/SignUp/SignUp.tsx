@@ -99,6 +99,7 @@ const SignUp: React.FC<ISignUp> = ({ toggleShow }) => {
                         transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
                         whileHover={{ rotate: 360, scale: 1.1 }}
                         className="text-[28px] bg-gradient-to-br from-blue-500 to-blue-700 text-white border-2 border-blue-400 rounded-full mr-3 w-12 h-12 hover:from-blue-600 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-300 transition-all duration-300 flex items-center justify-center cursor-pointer shadow-md"
+                        onClick={toggleShow}
                     >
                         <i className="bi bi-person-plus-fill"></i>
                     </motion.span>
