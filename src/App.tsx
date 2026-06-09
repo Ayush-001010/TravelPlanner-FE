@@ -27,11 +27,12 @@ const App: React.FC<IApp> = () => {
           <div className="flex">
             <SideNavBar />
             <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/trip/:id" element={<Dashboard />} />
             </Routes>
           </div>
         )}
-    </HashRouter>
+      </HashRouter>
     </div >
   )
 };

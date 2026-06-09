@@ -3,3 +3,8 @@ export interface ISideNavBarInterface {
     icon: string;
     link: string;
 }
+
+export interface IOptionsInterface {
+    label: any;
+    value: string;
+}
