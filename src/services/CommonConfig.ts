@@ -10,7 +10,7 @@ export default class CommonConfig {
   public static readonly sideNavBarConfig: Array<ISideNavBarInterface> = [
     {
       title: "Dashboard",
-      icon: "bi bi-speedometer2",
+      icon: "bi bi-globe-americas",
       link: "/dashboard",
     },
     {
