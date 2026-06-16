@@ -90,7 +90,6 @@ const TripForm: React.FC<ITripForm> = () => {
         formik.setFieldValue(fieldName, value);
     }
     const submitHandler = async (values: any) => {
-        console.log("Form submitted with values:", values);
         const response = await createTrip(values);
         if (response) {
             navigate(`/trip/${response}`);
@@ -102,7 +101,6 @@ const TripForm: React.FC<ITripForm> = () => {
             {Object.keys(initialValues).length > 0 && (
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={submitHandler}>
                     {(formik: FormikProps<any>) => {
-                        console.log("formik values", formik.values);
                         return (
                             <div>
                                 {

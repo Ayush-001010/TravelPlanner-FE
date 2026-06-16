@@ -13,6 +13,8 @@
     "@daypicker/react": "^10.0.1",
     "@reduxjs/toolkit": "^2.12.0",
     "@tailwindcss/vite": "^4.3.0",
+    "@tanstack/react-query": "^4.44.0",
+    "@xyflow/react": "^12.11.0",
     "antd": "^6.4.3",
     "axios": "^1.17.0",
     "bootstrap": "^5.3.8",
@@ -23,6 +25,7 @@
     "react-dom": "^19.2.6",
     "react-redux": "^9.3.0",
     "react-router-dom": "^7.16.0",
+    "socket.io-client": "^4.8.3",
     "tailwindcss": "^4.3.0",
     "yup": "^1.7.1"
   },

@@ -114,7 +114,6 @@ const SignIn: React.FC = () => {
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     // TODO: replace with real API call
-                    console.log('SignIn submit', values);
                     setTimeout(() => {
                         setSubmitting(false);
                         alert('Sign in successful (demo)');

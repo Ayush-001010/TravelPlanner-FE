@@ -8,9 +8,9 @@ export default class BECallingService {
   static postAPICall = async (endPoint: string, data: any) => {
     try {
       const response = await this.api.post(endPoint, data);
-      return response.data;
+      return response;
     } catch (error) {
-      console.log("Error in API call: ", error);
+      return { success: false , data : null };
     }
   };
 }

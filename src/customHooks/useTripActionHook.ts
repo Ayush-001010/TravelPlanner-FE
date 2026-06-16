@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import type IUserInterface from "../services/Interfaces/UserInterface";
 import BECallingService from "../services/APICalling/BECallingService";
+import SocketCallingService from "../services/APICalling/SocketCallingService";
+import TripFormConfig from "../services/TripFormConfig";
 
 const useTripActionHook = () => {
   const { userName, userEmail } = useSelector(
@@ -16,22 +18,48 @@ const useTripActionHook = () => {
         createdBy: userName,
         CreatedByMailID: userEmail || "aryanJha@gmail.com",
       };
-      console.log("Trip data to be sent to backend: ", tripData);
       // Call the API to create the trip with tripData
       const response = await BECallingService.postAPICall(
         "/trip/createRoom",
         tripData,
       );
-      console.log("Response from backend after creating trip: ", response);
-      return response.data.roomId;
+      return response?.data?.roomId ?? null;
     } catch (error) {
       console.error("Error creating trip: ", error);
       return null;
     }
   };
 
+  const makeSocketConnection = () => {
+    return new SocketCallingService();
+  };
+
+  const getOptions = async (optionType: "Places") => {
+    try {
+      const response = await BECallingService.postAPICall("trip/getOptions", {
+        optionType,
+      });
+      return response?.data ?? [];
+    } catch (error) {
+      console.error(`Error fetching ${optionType} options: `, error);
+      return [];
+    }
+  };
+
+  const getTripFormConfig = (formType: "Places") => {
+    switch (formType) {
+      case "Places":
+        return TripFormConfig.placeForm;
+      default:
+        return [];
+    }
+  };
+
   return {
     createTrip,
+    makeSocketConnection,
+    getOptions,
+    getTripFormConfig,
   };
 };
 

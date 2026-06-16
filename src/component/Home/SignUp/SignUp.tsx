@@ -136,9 +136,8 @@ const SignUp: React.FC<ISignUp> = ({ toggleShow }) => {
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
-                onSubmit={(values, { setSubmitting, resetForm }) => {
+                onSubmit={(_, { setSubmitting, resetForm }) => {
                     // TODO: replace with real API call
-                    console.log('SignUp submit', values);
                     setTimeout(() => {
                         setSubmitting(false);
                         resetForm();
