@@ -55,11 +55,23 @@ const useTripActionHook = () => {
     }
   };
 
+  const getHotelCatalog = async (placeName : string) => {
+    const response = await BECallingService.postAPICall("/trip/getHotelCatelog", { placeName });
+    return response?.data ?? [];
+  };
+
+  const getImagesFromBE = async (imageKeys: Array<string>) => {
+    const response = await BECallingService.postAPICall("/aws/getImages", { imageKeys });
+    return response.data ;
+  }
+
   return {
     createTrip,
     makeSocketConnection,
     getOptions,
     getTripFormConfig,
+    getHotelCatalog,
+    getImagesFromBE,
   };
 };
 

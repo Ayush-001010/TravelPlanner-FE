@@ -10,10 +10,11 @@ import type IUserInterface from './services/Interfaces/UserInterface';
 import SideNavBar from './component/SideNavBar/SideNavBar';
 import Trip from './component/Trip/Trip';
 import { setUserDetailsData } from './redux/Slices/UserDetails/UserDetails';
+import Learning from './component/Learning/Learning';
 
 
 const App: React.FC<IApp> = () => {
-  const { isLoggedIn , userName } = useSelector((state: any) => state.userDetails as IUserInterface);
+  const { isLoggedIn, userName } = useSelector((state: any) => state.userDetails as IUserInterface);
   const dispatch = useDispatch();
 
   console.log("User Name:", userName);
@@ -41,6 +42,7 @@ const App: React.FC<IApp> = () => {
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/trip/:id" element={<Trip />} />
+              <Route path="/learning" element={<Learning />} />
             </Routes>
           </div>
         )}

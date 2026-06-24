@@ -7,17 +7,18 @@ export default class TripFormConfig {
       fieldName: "Which place are you planning to visit?",
       backendName: "placeName",
       validation: Yup.string().required("Place name is required"),
-      fieldType: "text",
+      fieldType: "select",
+      placeholder : "Select a place"
     },
     {
       fieldName: "Start Date & Time of the Trip",
-      backendName: "startDateTime",
+      backendName: "startDate",
       validation: Yup.date().required("Start date and time is required"),
       fieldType: "datetime-local",
     },
     {
       fieldName: "End Date & Time of the Trip",
-      backendName: "endDateTime",
+      backendName: "endDate",
       validation: Yup.date().required("End date and time is required"),
       fieldType: "datetime-local",
     },

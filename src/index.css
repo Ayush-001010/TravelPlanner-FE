@@ -19,3 +19,28 @@
 .font-eater {
   font-family: "Eater", cursive;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hotel-swiper .swiper-button-prev,
+  .hotel-swiper .swiper-button-next {
+    @apply !w-7 !h-7 !mt-0 top-1/2 -translate-y-1/2 rounded-full bg-black/50 text-white;
+  }
+
+  .hotel-swiper .swiper-button-prev::after,
+  .hotel-swiper .swiper-button-next::after {
+    font-size: 10px !important;
+    font-weight: 700;
+  }
+
+  .hotel-swiper .swiper-button-prev {
+    left: 8px !important;
+  }
+
+  .hotel-swiper .swiper-button-next {
+    right: 8px !important;
+  }
+}
